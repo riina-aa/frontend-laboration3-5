@@ -1,0 +1,29 @@
+@use "base"; 
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2rem 4rem; 
+
+    img {
+        width: 100px; 
+        height: auto; 
+    }
+
+    ul {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem; 
+        list-style: none;
+    }
+        li {
+            font-size: base.$font-size-p;
+        }
+
+            a {
+                text-decoration: none;
+                color: base.$color-dark-textcolor;
+            }
+}
+
