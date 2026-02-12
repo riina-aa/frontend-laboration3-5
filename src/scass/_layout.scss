@@ -1,12 +1,18 @@
 @use "base"; 
+@use "components"; 
 
+body {
+    background-color: base.$color-light-background;
+    color: base.$color-dark-textcolor; 
+}
 nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 2rem 4rem; 
+    align-items: center;
+    padding: 1rem 4rem; 
 
-    img {
+    img.logo {
         width: 100px; 
         height: auto; 
     }
@@ -19,11 +25,66 @@ nav {
     }
         li {
             font-size: base.$font-size-p;
+            font-family: base.$font-paragraphs;
         }
 
             a {
                 text-decoration: none;
                 color: base.$color-dark-textcolor;
+
+                &:hover {
+                    color: base.$color-teal;
+                    text-decoration: underline;
+                }
             }
+
+
 }
+
+.search-container {
+    position: relative;
+
+    label {
+        display: none; 
+    }
+
+    input {
+        @include components.searchBar(15rem, 2rem); 
+        &:focus {
+            outline: 1px solid base.$color-dark-textcolor;
+        }
+    }
+
+    img.search-icon {
+        position: absolute;
+        top: 0.3rem; 
+        right: 1rem;
+        height: 22px;
+    }
+}
+
+.intro {
+    padding-top: 5rem;
+    text-align: center;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center; 
+
+    #col1 {
+        grid-column: 1;
+    }
+
+    #col2 {
+        grid-column: 2;
+    }
+
+    .textbox {
+
+    }
+}
+
+
 

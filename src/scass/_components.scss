@@ -1,0 +1,12 @@
+@use "base";
+
+@mixin searchBar($wsize, $hsize) {
+    width: $wsize;
+    height: $hsize;
+    background-color: white;
+    color: base.$color-dark-textcolor;
+    border: none;
+    border-radius: 20px;
+    padding: 0rem 1rem;
+    font-family: base.$font-paragraphs;
+}
