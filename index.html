@@ -1,34 +1,56 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/src/scass/main.scss">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-    <title>frontend-laboration3-5</title>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/src/scass/main.scss">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
 
-  </head>
+  <title>frontend-laboration3-5</title>
 
-  <body>
-    <nav>
-      <img class="logo" src="/public/images/storloggasvart.svg" alt="">
-      <ul>
-        <li class="active"><a href="index.html">Start</a></li>
-        <li><a href="valuation.html">SASS</a></li>
-        <li><a href="#">Animation</a></li>
-        <li><a href="#">Diagram</a></li>
-        <li><a href="#">Karta</a></li>
-      </ul>
-      <div class="search-container">
-        <label for="search"></label>
-        <input type="text" placeholder="Sök"> 
-        <img class="search-icon" src="/public/images/search-icon-dark.svg" alt="">
+</head>
+
+<body>
+  <nav>
+    <div class="logo"><img src="/public/images/storloggasvart.svg" alt=""></div>
+    <ul>
+      <li class="active"><a href="index.html">Start</a></li>
+      <li><a href="valuation.html">SASS</a></li>
+      <li><a href="#">Animation</a></li>
+      <li><a href="#">Diagram</a></li>
+      <li><a href="#">Karta</a></li>
+    </ul>
+    <div class="search-container">
+      <label for="search"></label>
+      <input type="text" placeholder="Sök">
+      <img class="search-icon" src="/public/images/search-icon-dark.svg" alt="">
+    </div>
+  </nav>
+  <main>
+    <section class="collage">
+      <div class="textbox">
+        <h1>Kurs: Frontend-baserad webbutveckling</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum, aperiam sint? Necessitatibus voluptas officiis
+          rem, blanditiis explicabo eligendi sed accusantium vitae cupiditate, porro debitis aut suscipit harum tempore
+          consequuntur tenetur</p>
       </div>
-    </nav>
-    <script type="module" src="/src/js/main.js"></script>
-  </body>
+      <div class="bildspel">
+        <div id="sass"><img src="/public/images/dogs-sunglasses.webp" alt=""></div>
+        <div id="map"><img src="/public/images/car-sunglasses.webp" alt=""></div>
+        <div id="animation"><img src="/public/images/woman2-sunglasses.webp" alt=""></div>
+        <div id="färg1"></div>
+        <div id="färg2"></div>
+        <div id="färg3"></div>
+      </div>
+    </section>
+  </main>
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+
 </html>

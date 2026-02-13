@@ -1,42 +1,54 @@
-@use "base"; 
-@use "components"; 
+@use "base";
+@use "components";
+
+%grid-colorbox-style {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
 
 body {
     background-color: base.$color-light-background;
-    color: base.$color-dark-textcolor; 
+    color: base.$color-dark-textcolor;
 }
+
 nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 4rem; 
+    padding: 0.5rem 5rem;
 
-    img.logo {
-        width: 100px; 
-        height: auto; 
+    .logo {
+        width: 15rem;
+    }
+
+    .logo img {
+        width: 100px;
+        height: auto;
     }
 
     ul {
         display: flex;
         flex-direction: row;
-        gap: 2rem; 
+        gap: 2rem;
         list-style: none;
     }
-        li {
-            font-size: base.$font-size-p;
-            font-family: base.$font-paragraphs;
+
+    li {
+        font-size: base.$font-size-p;
+        font-family: base.$font-paragraphs;
+    }
+
+    a {
+        text-decoration: none;
+        color: base.$color-dark-textcolor;
+
+        &:hover {
+            color: base.$color-teal;
+            text-decoration: underline;
         }
-
-            a {
-                text-decoration: none;
-                color: base.$color-dark-textcolor;
-
-                &:hover {
-                    color: base.$color-teal;
-                    text-decoration: underline;
-                }
-            }
+    }
 
 
 }
@@ -45,11 +57,12 @@ nav {
     position: relative;
 
     label {
-        display: none; 
+        display: none;
     }
 
     input {
-        @include components.searchBar(15rem, 2rem); 
+        @include components.searchBar(15rem, 2rem);
+
         &:focus {
             outline: 1px solid base.$color-dark-textcolor;
         }
@@ -57,10 +70,78 @@ nav {
 
     img.search-icon {
         position: absolute;
-        top: 0.3rem; 
+        top: 0.3rem;
         right: 1rem;
         height: 22px;
     }
+}
+
+.collage {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 3rem 5rem;
+}
+
+.textbox h1 {
+    font-size: base.$font-size-h1;
+    font-family: base.$font-headings;
+}
+
+.textbox p {
+    max-width: 50ch; 
+    font-family: base.$font-paragraphs;
+}
+
+.bildspel {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 150px 50px 100px 50px 150px;
+
+    #sass {
+        grid-column: 1;
+        grid-row: 1 / 4;
+    }
+
+    #färg1 {
+        grid-column: 1;
+        grid-row: 4 / 6;
+        background-color: base.$color-coral;
+        @extend %grid-colorbox-style;
+    }
+
+    #färg2 {
+        grid-column: 2;
+        grid-row: 1 / 3;
+        background-color: base.$color-honeycomb;
+        @extend %grid-colorbox-style;
+    }
+
+    #animation {
+        grid-column: 2;
+        grid-row: 3 / 6;
+    }
+
+    #map {
+        grid-column: 3;
+        grid-row: 1 / 4;
+    }
+
+    #färg3 {
+        grid-column: 3;
+        grid-row: 4 / 6;
+        background-color: base.$color-teal;
+        @extend %grid-colorbox-style;
+    }
+
+    #sass img,
+    #map img,
+    #animation img {
+        border-radius: 10px;
+    }
+
+
 }
 
 .intro {
@@ -71,7 +152,7 @@ nav {
 .content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    justify-items: center; 
+    justify-items: center;
 
     #col1 {
         grid-column: 1;
@@ -81,10 +162,5 @@ nav {
         grid-column: 2;
     }
 
-    .textbox {
-
-    }
+    .textbox {}
 }
-
-
-
