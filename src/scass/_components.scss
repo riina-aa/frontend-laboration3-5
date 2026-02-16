@@ -1,5 +1,48 @@
 @use "base";
 
+body {
+    background-color: base.$color-light-background;
+    color: base.$color-dark-textcolor;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: base.$font-headings;
+    }
+
+    p {
+        font-family: base.$font-paragraphs;
+    }
+}
+
+.intro {
+
+    padding-top: 2rem;
+
+    h1 {
+        font-size: base.$font-size-h1;
+        margin-bottom: 2rem;
+    }
+
+    span {
+        font-style: italic;
+    }
+
+    p {
+        max-width: 50ch;
+        line-height: 1.5em;
+    }
+
+    a {
+        margin-top: 2rem;
+    }
+}
+
+
+
 @mixin searchBar($wsize, $hsize) {
     width: $wsize;
     height: $hsize;
@@ -11,3 +54,70 @@
     font-family: base.$font-paragraphs;
 }
 
+.button-primary {
+    background-color: base.$color-teal;
+    color: base.$color-light-textcolor;
+    font-family: base.$font-paragraphs;
+    border-radius: 25px;
+    max-width: fit-content;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.picture-style {
+    border-radius: 10px;
+}
+
+.link {
+    text-decoration: none;
+    font-family: base.$font-paragraphs;
+    color: base.$color-dark-textcolor;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.product-information {
+    max-width: 33%;
+    text-align: justify;
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 2rem 2rem 4rem 2rem;
+    border-bottom: 5px solid base.$color-coral;
+
+    h2 {
+        font-size: base.$font-size-h4;
+        color: base.$color-dark-background;
+    }
+
+    img {
+        width: 30px;
+    }
+
+    p {
+        margin-top: 1em;
+        max-width: 35ch;
+    }
+}
+
+#art1 {border-bottom: 5px solid base.$color-teal;}
+#art2 {border-bottom: 5px solid base.$color-coral-light;}
+#art3 {border-bottom: 5px solid base.$color-honeycomb;}
+
+footer {
+    padding: 3rem; 
+    background-color: base.$color-teal-light;
+
+    .company-slogan {
+        text-align: center;
+        padding-bottom: 2rem;
+    }
+
+    .links {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        justify-content: center;
+    }
+}
