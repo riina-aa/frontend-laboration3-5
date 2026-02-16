@@ -27,6 +27,10 @@ body {
         margin-bottom: 2rem;
     }
 
+    h2 {
+        font-size: base.$font-size-h2;
+    }
+
     span {
         font-style: italic;
     }
@@ -63,6 +67,10 @@ body {
     padding: 1rem 2rem;
     text-decoration: none;
     display: inline-block;
+
+    &:hover {
+        background-color: base.$color-teal-dark;
+    }
 }
 
 .picture-style {
@@ -79,12 +87,15 @@ body {
     }
 }
 
-.product-information {
-    max-width: 33%;
+@mixin productColumn($size) {
+    max-width: $size;
     text-align: justify;
     background-color: rgba(255, 255, 255, 0.6);
     padding: 2rem 2rem 4rem 2rem;
-    border-bottom: 5px solid base.$color-coral;
+}
+
+.product-information {
+    @include productColumn(33%); 
 
     h2 {
         font-size: base.$font-size-h4;
