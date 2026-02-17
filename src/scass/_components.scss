@@ -1,8 +1,19 @@
 @use "base";
 
-body {
+@mixin theme-colors($light-theme: true) {
+
+  @if $light-theme {
     background-color: base.$color-light-background;
     color: base.$color-dark-textcolor;
+
+  } @else {
+    background-color: base.$color-dark-background;
+    color: base.$color-light-textcolor;
+  }
+}
+
+body {
+    @include theme-colors($light-theme: true); 
 
     h1,
     h2,
@@ -23,12 +34,12 @@ body {
     padding-top: 2rem;
 
     h1 {
-        font-size: base.$font-size-h1;
+        font-size: base.$font-primarysize-h1;
         margin-bottom: 2rem;
     }
 
     h2 {
-        font-size: base.$font-size-h2;
+        font-size: base.$font-primarysize-h2;
     }
 
     span {
@@ -89,16 +100,17 @@ body {
 
 @mixin productColumn($size) {
     max-width: $size;
-    text-align: justify;
-    background-color: rgba(255, 255, 255, 0.6);
+    text-align: start;
+    background-color: rgb(255, 255, 255);
+    color: base.$color-dark-textcolor;
     padding: 2rem 2rem 4rem 2rem;
 }
 
 .product-information {
-    @include productColumn(33%); 
+    @include productColumn(33%);
 
     h2 {
-        font-size: base.$font-size-h4;
+        font-size: base.$font-primarysize-h4;
         color: base.$color-dark-background;
     }
 
@@ -112,13 +124,22 @@ body {
     }
 }
 
-#art1 {border-bottom: 5px solid base.$color-teal;}
-#art2 {border-bottom: 5px solid base.$color-coral-light;}
-#art3 {border-bottom: 5px solid base.$color-honeycomb;}
+#art1 {
+    border-bottom: 5px solid base.$color-teal;
+}
+
+#art2 {
+    border-bottom: 5px solid base.$color-coral-light;
+}
+
+#art3 {
+    border-bottom: 5px solid base.$color-honeycomb;
+}
 
 footer {
-    padding: 3rem; 
+    padding: 3rem;
     background-color: base.$color-teal-light;
+    color: base.$color-dark-textcolor;
 
     .company-slogan {
         text-align: center;

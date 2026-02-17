@@ -15,22 +15,31 @@
 
   <body>
     <nav>
-      <img class="logo" src="/public/images/storloggasvart.svg" alt="">
-      <ul>
-        <li><a href="index.html">Start</a></li>
-        <li class="active"><a href="valuation.html">SASS</a></li>
-        <li><a href="animation.html">Animation</a></li>
-        <li><a href="#">Diagram</a></li>
-        <li><a href="#">Karta</a></li>
-      </ul>
-      <div class="search-container">
-        <label for="search"></label>
-        <input type="text" placeholder="Sök"> 
-        <img class="search-icon" src="/public/images/search-icon-dark.svg" alt="">
-      </div>
-    </nav>
+    <div class="logo"><img src="/public/images/storloggasvart.svg" alt=""></div>
+    <ul class="side-menu">
+      <li id="close-menu-li"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></li>
+      <li class="active"><a href="index.html">Start</a></li>
+      <li><a href="valuation.html">SASS</a></li>
+      <li><a href="animation.html">Animation</a></li>
+      <li><a href="#">Diagram</a></li>
+      <li><a href="#">Karta</a></li>
+    </ul>
+    <ul>
+      <li class="active hideOnMobile"><a href="index.html">Start</a></li>
+      <li class="hideOnMobile"><a href="valuation.html">SASS</a></li>
+      <li class="hideOnMobile"><a href="animation.html">Animation</a></li>
+      <li class="hideOnMobile"><a href="#">Diagram</a></li>
+      <li class="hideOnMobile"><a href="#">Karta</a></li>
+      <li id="open-menu-li"><svg xmlns="http://www.w3.org/2000/svg" height="28px" viewBox="0 -960 960 960" width="28px" fill="#000000"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></li>
+    </ul>
+    <div class="search-container">
+      <label for="search"></label>
+      <input type="text" placeholder="Sök">
+      <img class="search-icon" src="/public/images/search-icon-dark.svg" alt="">
+    </div>
+  </nav>
     <main>
-      <section class="collage">
+      <section class="collage sass">
         <section class="intro">
           <h2>Utvärdering av arbetet med SASS</h2>
         </section>

@@ -19,12 +19,21 @@
 <body>
   <nav>
     <div class="logo"><img src="/public/images/storloggasvart.svg" alt=""></div>
-    <ul>
+    <ul class="side-menu">
+      <li id="close-menu-li"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></li>
       <li class="active"><a href="index.html">Start</a></li>
       <li><a href="valuation.html">SASS</a></li>
       <li><a href="animation.html">Animation</a></li>
       <li><a href="#">Diagram</a></li>
       <li><a href="#">Karta</a></li>
+    </ul>
+    <ul>
+      <li class="active hideOnMobile"><a href="index.html">Start</a></li>
+      <li class="hideOnMobile"><a href="valuation.html">SASS</a></li>
+      <li class="hideOnMobile"><a href="animation.html">Animation</a></li>
+      <li class="hideOnMobile"><a href="#">Diagram</a></li>
+      <li class="hideOnMobile"><a href="#">Karta</a></li>
+      <li class="menu-button" id="open-menu-li"><svg xmlns="http://www.w3.org/2000/svg" height="28px" viewBox="0 -960 960 960" width="28px" fill="#000000"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></li>
     </ul>
     <div class="search-container">
       <label for="search"></label>
@@ -59,7 +68,7 @@
       <article id="art2" class="product-information">
         <div>
           <img src="public/images/leaf-icon.svg" alt="">
-          <h2>Premium, Responsible Materials</h2>
+          <h2>Responsible Materials</h2>
         </div>
         <p>Lightweight, durable frames crafted with intention. Designed to last beyond the season — and beyond fast
           trends.</p>
