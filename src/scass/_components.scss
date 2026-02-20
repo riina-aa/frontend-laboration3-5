@@ -1,19 +1,22 @@
 @use "base";
+@use "animations";
 
 @mixin theme-colors($light-theme: true) {
 
-  @if $light-theme {
-    background-color: base.$color-light-background;
-    color: base.$color-dark-textcolor;
+    @if $light-theme {
+        background-color: base.$color-light-background;
+        color: base.$color-dark-textcolor;
 
-  } @else {
-    background-color: base.$color-dark-background;
-    color: base.$color-light-textcolor;
-  }
+    }
+
+    @else {
+        background-color: base.$color-dark-background;
+        color: base.$color-light-textcolor;
+    }
 }
 
 body {
-    @include theme-colors($light-theme: true); 
+    @include theme-colors($light-theme: true);
 
     h1,
     h2,
@@ -84,8 +87,38 @@ body {
     }
 }
 
+.button-secondary {
+    background-color: base.$color-coral;
+    color: base.$color-light-textcolor;
+    font-family: base.$font-paragraphs;
+    font-weight: 600;
+    border: none;
+    border-radius: 25px;
+    max-width: fit-content;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    transition: transform 0.1s ease, box-shadow 0.3s ease;
+
+    &:hover {
+        transform: scale(1.1);
+        background-color: base.$color-coral-medium;
+    }
+
+    &:active {
+        transform: translateY(2px);
+        box-shadow: 0 0 3px grey;
+    }
+}
+
 .picture-style {
     border-radius: 10px;
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: scale(1.02);
+    }
 }
 
 .link {
