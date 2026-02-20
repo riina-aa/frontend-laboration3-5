@@ -12,7 +12,8 @@ $color-light-textcolor: #F7EDE2;
 //Accentfärger 
 $color-coral: #F28482; 
 $color-coral-light: color.scale(#F28482, $lightness: 50%); 
-$color-coral-dark: color.scale(#F28482, $lightness: -20%);
+$color-coral-medium: color.scale(#F28482, $lightness: -5%);
+$color-coral-dark: color.scale(#F28482, $lightness: -50%);
 
 $color-teal: #84A59D; 
 $color-teal-light: color.scale(#84A59D, $lightness: 50%); 
@@ -38,4 +39,6 @@ $font-mobilesize-h3: 30px;
 $font-mobilesize-h4: 20px;  
 
 $font-size-p: 16px; 
+
+
 
