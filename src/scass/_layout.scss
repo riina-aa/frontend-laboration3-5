@@ -331,3 +331,25 @@ nav {
         }
     }
 }
+
+.diagram {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    align-content: center;
+
+    .diagram h1 {
+        grid-column: 1 / -1;
+        grid-row: 1;
+    }
+
+    .tabeller {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        display: flex;
+        flex-direction: row; 
+        justify-content: space-between;
+        padding: 8rem 4rem;
+    }
+}
