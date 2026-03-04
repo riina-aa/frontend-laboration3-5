@@ -113,3 +113,28 @@ function displayKursData(kurs) {
         }
     );
 };
+
+function displayProgramData(program) {
+
+    new Chart(
+        document.getElementById('cirkeldiagram'),
+        {
+            type: 'doughnut',
+            data: {
+                labels: program.map(p => p.name),
+                datasets: [{
+                    label: 'Totalt antal sökande:',
+                    data: program.map(p => p.applicantsTotal),
+                    backgroundColor: [
+                        'rgba(255, 99, 132)',
+                        'rgba(255, 159, 64)',
+                        'rgba(255, 205, 86)',
+                        'rgba(75, 192, 192)',
+                        'rgba(54, 162, 235)',
+                    ]
+                }
+                ]
+            }
+        }
+    );
+};
