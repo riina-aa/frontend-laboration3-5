@@ -55,6 +55,12 @@ function startBounce() {
     });
 }
 
+/**
+ * Hämtar ett fetch-anrop och lagrar informationen i en global variabel. Som sedan anropar en ny funktion med variabeln som argument.
+ * 
+ * 
+ */
+
 let antagningData = [];
 
 async function getData() {
