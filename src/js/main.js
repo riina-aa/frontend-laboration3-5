@@ -11,6 +11,13 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
+/**
+ * Initierar webbplatsens funktionalitet när DOM:en har laddats.
+ * Startar menyer, animationer, hämtar statistikdata och aktiverar
+ * sökfunktionen för kartan.
+ * 
+ * @returns {void}
+ */
 function init() {
     showSidebar();
     hideSidebar();
@@ -68,14 +75,18 @@ function startBounce() {
     });
 }
 
-/**
- * Hämtar ett fetch-anrop och lagrar informationen i en global variabel. Som sedan anropar en ny funktion med variabeln som argument.
- * 
- * 
- */
+
 
 let antagningData = [];
 
+/**
+ * Hämtar statistikdata om sökande från ett externt JSON-API.
+ * Den hämtade datan sparas i den globala variabeln antagningData
+ * och skickas vidare till filterData för bearbetning.
+ * 
+ * @async
+ * @returns {Promise<void>}
+ */
 async function getData() {
     const url = "https://mallarmiun.github.io/Frontend-baserad-webbutveckling/Moment%205%20-%20Dynamiska%20webbplatser/statistik_sokande_ht25.json"
 
@@ -90,6 +101,14 @@ async function getData() {
     }
 }
 
+/**
+ * Filtrerar och sorterar statistikdatan.
+ * Delar upp datan i kurser och program, sorterar dem efter
+ * antal sökande och skickar de mest populära vidare till diagram.
+ * 
+ * @param {Array<Object>} data - Array med statistikobjekt från API:et
+ * @returns {void}
+ */
 function filterData(data) {
 
     let kurser = data.filter(kurs => kurs.type === "Kurs");
@@ -105,7 +124,14 @@ function filterData(data) {
     displayProgramData(toppProgram);
 }
 
-
+/**
+ * Skapar ett stapeldiagram med de mest populära kurserna
+ * baserat på antal sökande.
+ * 
+ * @param {Array<Object>} kurs - Array med kursobjekt som innehåller
+ * namn och antal sökande.
+ * @returns {void}
+ */
 function displayKursData(kurs) {
 
     const canvas = document.getElementById("stapeldiagram");
@@ -134,6 +160,14 @@ function displayKursData(kurs) {
     );
 };
 
+/**
+ * Skapar ett cirkeldiagram med de mest populära programmen
+ * baserat på antal sökande.
+ * 
+ * @param {Array<Object>} program - Array med programobjekt som innehåller
+ * namn och antal sökande.
+ * @returns {void}
+ */
 function displayProgramData(program) {
 
     const canvas = document.getElementById("stapeldiagram");
@@ -162,7 +196,14 @@ function displayProgramData(program) {
     if (!cirkeldiagram === 0) return;
 };
 
-
+/**
+ * Hämtar koordinater för en plats baserat på användarens sökning
+ * via Open-Meteos geocoding API. När koordinaterna hämtats skickas
+ * de vidare till displayPlace för att visa platsen på kartan.
+ * 
+ * @async
+ * @returns {Promise<void>}
+ */
 async function fetchCordinates() {
 
     let url = "https://geocoding-api.open-meteo.com/v1/search?";
@@ -185,14 +226,21 @@ async function fetchCordinates() {
     }
 }
 
+/**
+ * Uppdaterar kartans position och placerar en markör på den
+ * sökta platsen.
+ * 
+ * @param {number} latitude - Platsens latitud
+ * @param {number} longitude - Platsens longitud
+ * @param {string} name - Namnet på platsen
+ * @returns {void}
+ */
 function displayPlace(latitude, longitude, name) {
 
-map.setView([latitude, longitude], 13);
+    map.setView([latitude, longitude], 13);
 
-let marker = L.marker([latitude, longitude]).addTo(map);
-
-marker.bindPopup(`${name}`).openPopup();
-
+    let marker = L.marker([latitude, longitude]).addTo(map);
+    marker.bindPopup(`${name}`).openPopup();
 }
 
 
