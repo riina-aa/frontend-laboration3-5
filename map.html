@@ -53,13 +53,17 @@
     <main>
         <section class="collage">
             <section class="map-search">
-                <div>
+                <div id="sök-textruta">
                     <h1>Sök en plats på kartan</h1>
-                    <p>Använd sökrutan för att söka på en plats och få fram den på kartan.</p>
                 </div>
-                <div>
-                    <label for="search-place">Sök:</label>
-                    <input type="text" id="search-place" placeholder="Exempel: Stockholm">
+                <div id="sök-plats-ruta">
+                    <p>Använd sökrutan för att söka på en plats och få fram den på kartan.</p>
+                    <label for="search-place">Ange stad:</label>
+                    <div class="sök-container">
+                        <input type="text" id="search-place" placeholder="Exempel: Stockholm">
+                        <button id="searchPlaceBtn">Sök</button>
+                    </div>
+
                 </div>
                 <div id="map"></div>
             </section>
