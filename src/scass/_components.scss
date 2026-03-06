@@ -186,3 +186,61 @@ footer {
         justify-content: center;
     }
 }
+
+.map-search {
+    width: 100%;
+
+
+    #sök-textruta h1 {
+        font-size: base.$font-primarysize-h2;
+        margin-bottom: 2rem;
+    }
+
+    #sök-plats-ruta {
+
+        p {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            font-family: base.$font-paragraphs;
+        }
+
+        .sök-container {
+            display: flex;
+            flex-direction: row;
+            gap: 0.5rem;
+            margin-top: 0.7rem;
+        }
+
+        input {
+            width: 20rem;
+            padding: 0.5rem;
+            border: none;
+            font-family: base.$font-paragraphs;
+            border-radius: 10px;
+        }
+
+        button {
+            padding: 0.5rem 1rem;
+            background-color: base.$color-teal;
+            border: none;
+            color: white;
+            text-transform: uppercase;
+            border-radius: 10px;
+
+            &:hover {
+                background-color: base.$color-teal-dark;
+                cursor: pointer;
+            }
+        }
+
+
+    }
+}
+
+#map {
+    width: 800px;
+    height: 500px;
+    justify-self: end;
+}
